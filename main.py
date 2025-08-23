@@ -48,6 +48,7 @@ def main():
                 sys.exit()
             for shot in shots:
                 if asteroid.collision_check(shot):
+                    pygame.sprite.Sprite.kill(shot)
                     split_result = asteroid.split()
                     if split_result:
                         asteroid1, asteroid2 = split_result
